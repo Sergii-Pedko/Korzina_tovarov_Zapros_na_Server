@@ -1,0 +1,23 @@
+/*СПИННЕР - должен быть в Фиксированном положении и Строго по Центру сайта*/
+
+.spinner-container {
+	position: fixed;
+	z-index: 5;
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100vh;
+
+	display: flex;
+	/*margin: auto;*/
+   
+  justify-content:space-around; /*по Центру - ПО 0X */
+  align-items: center; /*по Центру - ПО 0Y */
+}
+
+.spinner__img {
+	width: 200px;
+	height: 200px;
+}

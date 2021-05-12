@@ -1,0 +1,110 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {         
+  padding: 0;  
+  border: 0; 
+  margin: 0;
+  
+  font-size: 100%;
+  font: inherit; 
+  /*vertical-align: baseline;*/
+} 
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/*_________________Задаем ПЕРЕМЕННЫЕ в CSS___________________________*/
+:root {
+  --color-light: #f8f9fa;/*переменные- Для Цвета*/
+  --color-medium: #e8e8e8;
+  --color-dark: #a1a1a1;
+  --color-unaccent: #808080;
+  --color-white: #fff;
+  --color-error-light: #f26b6b;
+  --color-error-dark: #d65c5c;
+
+  --spacing-small: 10px; /*переменные- Для Отступов*/
+  --spacing-medium: 15px;
+  --spacing-large: 40px;
+
+  --border-radius: 3px;
+  --linear-gradient: linear-gradient(to right, #e2f87c, #d6f567, #c8f151, #b9ee38, #a8eb12);
+  --box-shadow: 
+    0 16px 24px 2px rgba(33,37,41,.02), 
+    0 6px 30px 5px rgba(33,37,41,.04), 
+    0 8px 10px -5px rgba(33,37,41,.1);
+}
+/*___________________________________________________________________*/
+
+/*Стилизуем БОКОВОЙ СКРОЛ - ДЛЯ Goggle Chrome______________________ */
+
+::-webkit-scrollbar-thumb {/*Цвета Скролла*/
+  background-color: blue; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-track {/*Цвета Дорожки по которой ходит Скролл*/
+  background-color: pink;  
+}
+
+::-webkit-scrollbar { /*Ширина Скролла*/
+  width: 16px; 
+   /*Необходимо задать Цвета Скролла - иначе его вообще будет НЕ ВИДНО */
+}
+
+/*________________________________________________*/
+
+
+body {
+  font-family: Verdana, sans-serif, 'Times New Roman', Arial; /* ОСНОВНОЙ ШРИФТ*/
+  line-height: 1.7;
+  background-color: var(--color-light); /*ПОДКЛЮЧАЕМ ПЕРЕМЕННУЮ (стр.33)
+  
+/*__________________________________________________________________*/
+   /*font-family: Verdana, sans-serif, 'Times New Roman', Arial;*/
+   /*font-weight: 400;*/ /*normal или Regular*/
+   /*font-style: normal;*/
+   /*font-size: 14px;*/
+   /*line-height: 18px;*/
+   /*color: black;  */
+
+   /*background-image: url(1400x0.jpg);*/
+   /*background-repeat: no-repeat;*/
+   /*background-size: cover;*/
+/*___________________________________________________________________*/
+}
+
+a {
+  text-decoration: none; /*убрали подчеркивание*/
+  display: inline-block; /*строчно-блочная*/
+}
+
+ul, li {
+  list-style: none; /*Удаление маркеров нумерации*/
+}
+/*_____________________________________________________________________*/
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 15px; /*чтобы контейнер не прилипал к стенкам ГАДЖЕТОВ
+                    на малой ШИРИНЕ (меньше 1920)*/
+
+  /*background-color:#CEF6F5; */
+  /*height: 100vh;*/
+ }
+/*______________________________________________________________________*/

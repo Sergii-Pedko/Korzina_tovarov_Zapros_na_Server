@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <meta content="telephone=no" name="format-detection">
+	 <link rel="shortcut icon" href="img/server.png" type="image/x-icon">
+
+	 <title>ЗАПРС на СЕРВЕР- JS Guitar Shop - КОРЗИНА Интернет Магазина</title>
+
+	 <link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	  <body>
+	  	<main class="wrapper">
+	  		<div id="header"><!-- Cчетчик (кол-во) товаров в Корзине-->
+	  		</div>
+
+	      <div id="products"><!-- Перечень товаров на странице (В Магазине)-->
+	      </div>
+
+	      <div id="shopping"><!-- КОРЗИНА-->
+		    </div>
+
+		    <div id="spinner"><!-- SVG которая будет вращаться пока загружаются данные с Сервера (пока идет запрос на Сервер) cкачано с сайта loading.io -> SVG ->  ANIMATED -->
+		    </div>
+
+		    <div id="error"><!-- Вывод на Экран Окна Сообщения - ЕСЛИ ОТВЕТ по запросу на СЕРВЕР НЕ ПРИШЕЛ -->
+		    </div>
+	  	</main>
+	  	
+	   <!-- Все эти блоки разбиты по соответствующим Папкам (по id) [внутри для каждого компоненнта Отдельный Файл .js и .css] - Глобальная Папка - components  
+	   	В Папке constants (root.js - ПОМЕЩАЕМ ВЫБОРКУ всех узлов                  [header, products, shopping, spinner, error - стр.15-28 ->
+	   	    ЧЕРЕЗ document.getElementById('header')..('products')..('shopping')]
+
+	   	                  catalog.js - КАТАЛОГ ТОВАРОВ
+
+	   	 - в реале ДОЛЖЕН ПРИХОДИТЬ С СЕРВЕРА как JSON
+	   	  (https://gist.githubusercontent.com/dev-pandaren/a3ad2d177d18402e609ec743676af80a/raw/3889c469f25c71ec11e628acdd12438742506504/guitar-catalog.json);
+	   	                   
+	    В Папке utils (localStorageUtil.js - Утилита для работы с LocalStorage-->
+
+	   <!-- Сonstants and Utils -->
+	  <!--  <script src="constants/catalog.js"></script> -->
+
+	  <!-- В примере с ЗАПРОСОМ НА СЕРВЕР - catalog.js НЕ НУЖЕН -->
+	   <script src="constants/root.js"></script>
+	   <script src="utils/localStorageUtil.js"></script>
+	                <!-- (JS-DOM.html-стр. 5613) -->
+
+     <!-- Каждый компонент БУДЕТ ПРЕДСТАВЛЯТЬ СОБОЙ class
+      (JS-DOM.html-стр. 6116)- со своимии МЕТОДАМИ и СВ-ВАМИ (невидимыми ДЛЯ ДРУГИХ КЛАССОВ)  -->
+
+	   <!-- Подключаем .js и .css - для Компонента Header- Cчетчик товаров -->
+	   <script src="components/Header/Header.js"></script>
+	   <link rel="stylesheet" href="components/Header/Header.css">
+
+	   <!-- Подключаем .js и .css - для Компонента /Products -->
+	   <script src="components/Products/Products.js"></script>
+	   <!-- Products.js -> прописан механизм просмотра Каталога товаров
+	   	(catalog.js) и механизм вывода товаров на САЙТ(экран)-->
+	   <link rel="stylesheet" href="components/Products/Products.css">
+
+	   <!-- Подключаем .js и .css - для Компонента Shopping - Выводим в Модальное Окно - ТОВАРЫ, ВЫБРАННЫЕ В КОРЗИНУ + ИТОГО СТОИМОСТЬ-->
+	   <script src="components/Shopping/Shopping.js"></script>
+	   <link rel="stylesheet" href="components/Shopping/Shopping.css">
+
+	    <!-- Подключаем .js и .css - для СПИННЕРА (SVG-ка которая будет вращаться пока загружаются данные с Сервера (пока идет запрос на Сервер)-->
+	   <script src="components/Spinner/Spinner.js"></script>
+	   <link rel="stylesheet" href="components/Spinner/Spinner.css">
+
+	   <!-- Подключаем .js и .css - для Вывода на Экран Окна Сообщения - ЕСЛИ ОТВЕТ по запросу на СЕРВЕР НЕ ПРИШЕЛ)-->
+	   <script src="components/Error/Error.js"></script>
+	   <link rel="stylesheet" href="components/Error/Error.css">
+
+<!-- _________________________________________________________________ -->
+
+       <!-- Создаем ОБЩУЮ ТОЧКУ ВХОДА - здесь будут:
+       1) РЕНДЕРИТЬСЯ Первоначальные Данные - т.е. ВЫЗЫВАТЬСЯ ПЕРВОНАЧАЛЬНЫЕ ДАННЫЕ)
+
+       2) Создаем переменную CATALOG (пустой массив)  -  Сюда ПО ЗАПРОСУ НА СЕРВЕР - БУДУТ ПРИХОДИТЬ ДАННЫЕ О ТОВАРАХ в виде МААСИВА-ОБЪЕКТОВ        (аналогично как в ф-ле catalog.js - который в этом проекте уже не нужен)-->
+	    <script src="index.js"></script>
+
+    </body>
+</html>

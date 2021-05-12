@@ -1,0 +1,56 @@
+.products-container { /*Стилизуем <ul>*/
+	display: grid;
+	/*Задаем -СЕТКУ*/
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/*CТОЛБЦЫ - автозаполнение, мин-ширина 250px, 1fr -чтобы растягивался на всю ширину ячейки */
+    grid-gap: 45px; /*отступы между ячейками*/
+    width: 80%; /*будет НЕ на весь экран*/
+    max-width: 1200px;
+    margin: 80px auto;  /*блок ПО ЦЕНТРУ; Подкл.Перем.(index.css-стр. 43)*/
+}
+
+.products-element { /*Стилизуем <li> - вложенные в <ul>*/
+   display: flex;
+   flex-direction: column; /*разбиваем на колонки*/
+   justify-content: flex-end; /*чтобы все прижималось к нижнему краю*/
+   padding: 25px 20px;
+   background-color: var(--color-white); 
+   box-shadow: var(--box-shadow);
+   border-radius: var(--border-radius);
+}
+
+.products-element__name {
+   margin-bottom: auto;  /*до этого все названия были на РАЗНОЙ ВЫСОТЕ - а так мы сделаем, чтобы они все одинаково ОТСКАКИВАЛИ ОТ НИЖНЕГО КРАЯ - и выравнивались по ВЕРХНЕМУ*/
+   font-weight: bold;
+}
+
+.products-element__img {
+	width: 100%;
+	height: 270px;
+	object-fit: contain; /*чтобы картинка полностью вмещалась в ячейку*/
+	margin-top: var(--spacing-medium);
+}
+
+.products-element__price{
+   margin-top: var(--spacing-medium);
+   color: var(--color-unaccent);
+  
+}
+
+.products-element__btn{
+   margin-top: var(--spacing-medium);
+   padding: var(--spacing-small) var(--spacing-medium);
+   border: 1px solid var(--color-unaccent);
+   border-radius: var(--border-radius);
+   cursor: pointer;
+   outline: none;
+   background: none;
+   font-family: inherit;
+   font-size: inherit; 
+
+}
+
+.products-element__btn_active{
+	border: 1px solid transparent;
+	background-image: var(--linear-gradient);  
+}
